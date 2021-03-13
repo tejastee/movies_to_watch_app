@@ -14,5 +14,5 @@ app.use("/movie_api_v1", movie_api_routes);
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, function () {
-    console.log('Server starting on port ${PORT}')
+    console.log(`Server starting on port ${PORT}`)
 });

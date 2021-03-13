@@ -4,24 +4,17 @@ const {
     DataTypes
 } = require('sequelize');
 const sequelize = require('./db_init')
-const TABLE_NAME = "movies"
+const TABLE_NAME = "user"
 
 const movie_row = sequelize.define(TABLE_NAME, {
-    movie_name: {
-        type: Sequelize.STRING,
-        primaryKey: true
-    },
-    status:{
+    user_name: {
         type: Sequelize.STRING
     },
-    user:{
+    email_id: {
         type: Sequelize.STRING,
         primaryKey: true
     },
-    created:{
-        type:Sequelize.DATE
-    },
-    suggested_by: {
+    password:{
         type: Sequelize.STRING
     }
 }, {
