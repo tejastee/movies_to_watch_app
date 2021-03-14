@@ -55,10 +55,10 @@ router.post("/add_recommendation", authenticateJWT ,async function (req, res) {
         console.log("Adding row - " + row_details)
         console.log(JSON.stringify(row_details, null, 2));
         movie_obj.create(row_details)
-        return res.status(200).send("Added !")
+        return res.status(200).send('Added !')
     }
 
-    return res.status(204).send("Movie Already Exists!")
+    return res.status(204).send('Movie Already Exists!')
    
     
 
@@ -95,11 +95,11 @@ router.post("/register", async function(req, res){
         const new_user = { user_name:username, email_id:email, password:hashedPassword };
         console.log(new_user);
         user_obj.create(new_user);
-        return res.status(201).send("Created Successfully!")
+        return res.status(201).send('Created Successfully!')
     }
     else{
         console.log("Already Exists !")
-        return res.status(400).send("User already exists!");
+        return res.status(400).send('User already exists!');
     }
 
 })
