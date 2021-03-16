@@ -4,7 +4,14 @@ const Sequelize = require('sequelize');
 
 const DB_URL = process.env.DATABASE_URL;
 // const DB_URL = "postgresql://postgres:password@localhost:5432/test";
-const sequelize = new Sequelize(DB_URL);
+const sequelize = new Sequelize(DB_URL,{
+    dialectOptions:{
+        ssl: {
+            require: true,
+            rejectUnauthorized: false
+        }
+    }}
+    );
 
 sequelize.authenticate()
 .then(() => {
